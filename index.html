@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemoglobin Hero & Portal Edukasi Anemia Remaja - Kemenkes RI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fff8f8;
+      color: #2b2d42;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #f87171;
+      border-radius: 9999px;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(229, 57, 53, 0.3); }
+      50% { box-shadow: 0 0 25px rgba(229, 57, 53, 0.6); }
+    }
+    .pulse-glow {
+      animation: pulseGlow 2.5s infinite;
+    }
+    .tab-active {
+      background-color: #d32f2f !important;
+      color: #ffffff !important;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-red-200 selection:text-red-900">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-red-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-11 h-11 bg-gradient-to-tr from-red-600 to-rose-400 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md shadow-red-200">
+          🩸
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-extrabold text-red-700 tracking-tight">Hemoglobin Hero</h1>
+            <span class="text-[11px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full border border-red-200">Aksi Bergizi</span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium">Inisiatif Solusi Cegah Anemia Remaja • Berbasis Ayo Sehat Kemenkes RI</p>
+        </div>
+      </div>
+
+      <nav class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar text-xs font-semibold text-slate-600">
+        <button onclick="switchTab('game')" id="tab-game" class="tab-btn tab-active px-3.5 py-2 rounded-xl transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span>🎮</span> Game Hemoglobin
+        </button>
+        <button onclick="switchTab('edukasi')" id="tab-edukasi" class="tab-btn px-3.5 py-2 rounded-xl hover:bg-red-50 hover:text-red-700 transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span>📖</span> Mengenal Anemia
+        </button>
+        <button onclick="switchTab('tips')" id="tab-tips" class="tab-btn px-3.5 py-2 rounded-xl hover:bg-red-50 hover:text-red-700 transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span>💡</span> Tips Kemenkes
+        </button>
+        <button onclick="switchTab('kuis')" id="tab-kuis" class="tab-btn px-3.5 py-2 rounded-xl hover:bg-red-50 hover:text-red-700 transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span>📝</span> Kuis Interaktif
+        </button>
+        <button onclick="switchTab('tim')" id="tab-tim" class="tab-btn px-3.5 py-2 rounded-xl hover:bg-red-50 hover:text-red-700 transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span>👥</span> Tim Pengembang
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow">
+
+    <!-- ==================== SECTION 1: GAME HEMOGLOBIN HERO ==================== -->
+    <section id="section-game" class="space-y-6">
+      <!-- Announcement Banner -->
+      <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 rounded-2xl p-4 sm:p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl">
+          <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-2">Misi Ksatria Darah Merah</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold mb-1">Kendalikan Sel Darah Merah, Hindari Defisiensi Zat Besi!</h2>
+          <p class="text-red-100 text-sm leading-relaxed">
+            Tangkap <b>Tablet Tambah Darah (TTD)</b>, <b>Bayam (Zat Besi)</b>, dan <b>Jeruk (Vitamin C)</b> untuk menjaga kadar Hemoglobin di atas batas normal (&ge;12 g/dL). Hindari minum teh/kopi langsung setelah makan dan kebiasaan begadang!
+          </p>
+        </div>
+        <div class="absolute -right-6 -bottom-8 opacity-15 text-9xl select-none pointer-events-none">🔬</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Game Canvas Column -->
+        <div class="lg:col-span-8 bg-white border border-red-100 rounded-3xl p-4 sm:p-6 shadow-md shadow-red-100/50 flex flex-col items-center">
+          
+          <!-- Top Game Status HUD -->
+          <div class="w-full flex flex-wrap items-center justify-between gap-3 bg-red-50/80 p-3.5 rounded-2xl border border-red-100 mb-4">
+            <div class="flex items-center gap-4">
+              <div>
+                <span class="text-[11px] text-slate-500 font-bold block uppercase tracking-wide">Skor Kamu</span>
+                <span id="scoreDisplay" class="text-2xl font-black text-red-700">0</span>
+              </div>
+              <div class="border-l border-red-200 pl-4">
+                <span class="text-[11px] text-slate-500 font-bold block uppercase tracking-wide">High Score</span>
+                <span id="highScoreDisplay" class="text-lg font-bold text-slate-700">0</span>
+              </div>
+            </div>
+
+            <!-- Hemoglobin Meter -->
+            <div class="flex-1 max-w-[260px] min-w-[200px]">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-bold text-slate-700 flex items-center gap-1">
+                  Status Hb: <span id="hbStatusLabel" class="text-emerald-700 font-black">Normal</span>
+                </span>
+                <span id="hbDisplay" class="text-xs font-black text-slate-800">12.0 g/dL</span>
+              </div>
+              <div class="w-full h-3.5 bg-slate-200 rounded-full overflow-hidden p-0.5 border border-slate-300">
+                <div id="hbBar" class="h-full bg-emerald-500 rounded-full transition-all duration-300" style="width: 75%;"></div>
+              </div>
+              <div class="flex justify-between text-[10px] text-slate-400 mt-0.5 font-semibold">
+                <span>Kritis (&lt;8)</span>
+                <span>Waspada (8-11.9)</span>
+                <span>Normal (&ge;12)</span>
+              </div>
+            </div>
+
+            <!-- Controls Audio Toggle & Pause -->
+            <div class="flex items-center gap-2">
+              <button id="btnSoundToggle" onclick="toggleAudio()" class="p-2 rounded-xl bg-white border border-red-200 text-slate-600 hover:text-red-700 text-sm font-bold shadow-sm" title="Toggle Suara">
+                🔊
+              </button>
+              <button id="btnPause" onclick="togglePauseGame()" class="p-2 px-3 rounded-xl bg-white border border-red-200 text-slate-700 hover:text-red-700 text-xs font-bold shadow-sm">
+                ⏸️ Pause
+              </button>
+            </div>
+          </div>
+
+          <div class="relative w-full max-w-[620px] aspect-[4/3] rounded-2xl overflow-hidden border-2 border-red-200 bg-gradient-to-b from-rose-50/40 to-red-50/20 shadow-inner">
+            <canvas id="gameCanvas" width="600" height="450" class="w-full h-full block cursor-pointer"></canvas>
+
+            <!-- Game Overlay Screen (Start / Game Over / Win) -->
+            <div id="gameModal" class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center text-white transition-opacity duration-200">
+              <div id="modalIcon" class="text-6xl mb-3 animate-bounce">🩸</div>
+              <h3 id="modalTitle" class="text-2xl sm:text-3xl font-black mb-2 text-red-300">Hemoglobin Hero</h3>
+              <p id="modalDesc" class="text-slate-200 text-sm max-w-md mb-6 leading-relaxed">
+                Jaga sel darah merah tetap prima! Gerakkan ke kiri & kanan untuk menangkap nutrisi pembentuk sel darah dan hindari kebiasaan pemicu anemia.
+              </p>
+              <button id="btnActionGame" onclick="startGame()" class="px-7 py-3 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-base shadow-lg shadow-red-600/40 transition-transform active:scale-95 flex items-center gap-2">
+                <span>▶️</span> Mulai Misi
+              </button>
+            </div>
+          </div>
+
+          <div class="w-full max-w-[620px] flex items-center justify-between gap-4 mt-4">
+            <button id="btnTouchLeft" class="flex-1 py-3 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold rounded-2xl shadow-md text-sm select-none flex items-center justify-center gap-2">
+              <span>◀</span> Geser Kiri [A]
+            </button>
+            <button id="btnTouchRight" class="flex-1 py-3 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold rounded-2xl shadow-md text-sm select-none flex items-center justify-center gap-2">
+              Geser Kanan [D] <span>▶</span>
+            </button>
+          </div>
+
+          <!-- Contextual Floating Advice -->
+          <div class="w-full max-w-[620px] mt-4 bg-amber-50 border border-amber-200 rounded-2xl p-3 flex items-start gap-2.5 text-xs text-amber-900">
+            <span class="text-base">💡</span>
+            <div>
+              <span class="font-bold">Info Interaktif Saat Bermain:</span>
+              <p id="dynamicTip" class="text-amber-800 mt-0.5">Tekan tombol panah atau gunakan sentuhan layar untuk menggerakkan sel darah merah.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-4">
+          <div class="bg-white border border-red-100 rounded-3xl p-5 shadow-sm">
+            <h3 class="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
+              <span>🎯</span> Panduan Tangkapan Nutrisi
+            </h3>
+            <div class="space-y-2.5 text-xs">
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-xl">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">💊</span>
+                  <div>
+                    <span class="font-bold text-emerald-900 block">Tablet Tambah Darah (TTD)</span>
+                    <span class="text-emerald-700">Wajib 1x per minggu bagi remaja</span>
+                  </div>
+                </div>
+                <span class="font-black text-emerald-600 bg-white px-2 py-1 rounded-lg border border-emerald-200">+2.5 Hb</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-xl">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🥦</span>
+                  <div>
+                    <span class="font-bold text-emerald-900 block">Sayuran Hijau & Daging</span>
+                    <span class="text-emerald-700">Sumber zat besi pembentuk Hb</span>
+                  </div>
+                </div>
+                <span class="font-black text-emerald-600 bg-white px-2 py-1 rounded-lg border border-emerald-200">+1.0 Hb</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-xl">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🍊</span>
+                  <div>
+                    <span class="font-bold text-emerald-900 block">Jeruk / Vitamin C</span>
+                    <span class="text-emerald-700">Membantu penyerapan zat besi</span>
+                  </div>
+                </div>
+                <span class="font-black text-emerald-600 bg-white px-2 py-1 rounded-lg border border-emerald-200">+1.0 Hb</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 bg-rose-50/70 border border-rose-100 rounded-xl">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">☕</span>
+                  <div>
+                    <span class="font-bold text-rose-900 block">Teh/Kopi Pasca Makan</span>
+                    <span class="text-rose-700">Tanin mengikat zat besi!</span>
+                  </div>
+                </div>
+                <span class="font-black text-rose-600 bg-white px-2 py-1 rounded-lg border border-rose-200">-1.5 Hb</span>
+              </div>
+
+              <div class="flex items-center justify-between p-2.5 bg-rose-50/70 border border-rose-100 rounded-xl">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🥱</span>
+                  <div>
+                    <span class="font-bold text-rose-900 block">Begadang & Junk Food</span>
+                    <span class="text-rose-700">Memicu sindrom 5L & drop</span>
+                  </div>
+                </div>
+                <span class="font-black text-rose-600 bg-white px-2 py-1 rounded-lg border border-rose-200">-2.0 Hb</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Tip Card -->
+          <div class="bg-gradient-to-br from-rose-500 to-red-600 text-white rounded-3xl p-5 shadow-sm">
+            <h4 class="font-bold text-sm mb-1 flex items-center gap-2">
+              <span>🩺</span> Mengapa Game Ini Dibuat?
+            </h4>
+            <p class="text-xs text-rose-100 leading-relaxed mb-3">
+              Proyek karya Tim Multimedia/RPL ini mengonversi pesan kesehatan Kemenkes RI menjadi simulasi interaktif agar siswa tidak hanya menghafal, tetapi merasakan konsekuensi defisiensi zat besi secara visual.
+            </p>
+            <div class="bg-white/10 rounded-xl p-2.5 text-[11px] font-semibold text-white/90">
+              📌 Standar Kemenkes: Hb Remaja Putri &ge; 12 g/dL & Remaja Putra &ge; 13 g/dL.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: MENGENAL ANEMIA ==================== -->
+    <section id="section-edukasi" class="hidden space-y-6">
+      <div class="bg-white border border-red-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="max-w-3xl">
+          <span class="text-xs font-bold text-red-600 bg-red-50 border border-red-200 px-3 py-1 rounded-full uppercase tracking-wider">Artikel Ilmiah Remaja</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-3">Mengenal Gejala & Dampak Anemia pada Usia Remaja</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Berdasarkan rujukan resmi <i>Ayo Sehat Kementerian Kesehatan RI</i>, anemia adalah kondisi ketika kadar hemoglobin (Hb) di dalam darah lebih rendah dari ambang normal, sehingga sel darah merah tidak mampu mendistribusikan oksigen secara optimal ke seluruh organ tubuh termasuk otak.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          <div class="bg-red-50/60 border border-red-100 rounded-2xl p-5">
+            <div class="text-3xl mb-2">🩸</div>
+            <h4 class="font-bold text-slate-800 text-sm mb-1">Apa itu Hemoglobin?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Protein kaya zat besi di dalam sel darah merah yang bertugas mengangkut oksigen dari paru-paru ke seluruh sel tubuh untuk menghasilkan energi bagi aktivitas belajar dan olahraga.
+            </p>
+          </div>
+
+          <div class="bg-red-50/60 border border-red-100 rounded-2xl p-5">
+            <div class="text-3xl mb-2">👩‍🦰</div>
+            <h4 class="font-bold text-slate-800 text-sm mb-1">Mengapa Remaja Putri Rentan?</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Memasuki masa pubertas, remaja mengalami lonjakan pertumbuhan (*growth spurt*) serta kehilangan darah secara rutin setiap bulan melalui siklus menstruasi.
+            </p>
+          </div>
+
+          <div class="bg-red-50/60 border border-red-100 rounded-2xl p-5">
+            <div class="text-3xl mb-2">📉</div>
+            <h4 class="font-bold text-slate-800 text-sm mb-1">Dampak Terhadap Prestasi</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Kekurangan suplai oksigen ke otak memicu kesulitan konsentrasi, daya ingat menurun, kantuk di kelas, serta menurunkan kebugaran jasmani remaja secara menyeluruh.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-extrabold text-slate-900 mt-10 mb-4 flex items-center gap-2">
+          <span>⚠️</span> Tanda & Gejala Klinis Anemia Menurut Kemenkes RI
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Gejala 1 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">1</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Sindrom 5L Populer</h5>
+              <p class="text-xs text-slate-600 mt-1">Lesu, Lelah, Letih, Lemah, dan Lalai. Tubuh terasa lemas bahkan setelah beristirahat cukup.</p>
+            </div>
+          </div>
+
+          <!-- Gejala 2 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">2</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Wajah, Kelopak Mata & Kuku Pucat</h5>
+              <p class="text-xs text-slate-600 mt-1">Konjungtiva mata bagian dalam, telapak tangan, bibir, serta dasar kuku kehilangan rona kemerahan alami.</p>
+            </div>
+          </div>
+
+          <!-- Gejala 3 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">3</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Pusing & Sakit Kepala Berulang</h5>
+              <p class="text-xs text-slate-600 mt-1">Sering merasa berkunang-kunang atau pandangan gelap terutama saat tiba-tiba berdiri dari posisi duduk.</p>
+            </div>
+          </div>
+
+          <!-- Gejala 4 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">4</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Jantung Berdebar (Palpitasi)</h5>
+              <p class="text-xs text-slate-600 mt-1">Jantung memompa lebih kencang dan cepat untuk mengompensasi minimnya kandungan oksigen dalam darah.</p>
+            </div>
+          </div>
+
+          <!-- Gejala 5 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">5</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Perubahan Suasana Hati (Mood Swings)</h5>
+              <p class="text-xs text-slate-600 mt-1">Cepat merasa kesal, cemas, atau sulit berkonsentrasi karena ketidakseimbangan energi metabolisme sel otak.</p>
+            </div>
+          </div>
+
+          <!-- Gejala 6 -->
+          <div class="border border-slate-200 hover:border-red-300 transition-all rounded-2xl p-4 bg-white flex gap-3.5 items-start shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg shrink-0">6</div>
+            <div>
+              <h5 class="text-sm font-bold text-slate-800">Napas Terengah & Sesak Ringan</h5>
+              <p class="text-xs text-slate-600 mt-1">Cepat kehilangan nafas saat melakukan kegiatan fisik ringan seperti menaiki tangga sekolah.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: TIPS KEMENKES RI ==================== -->
+    <section id="section-tips" class="hidden space-y-6">
+      <div class="bg-white border border-red-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="max-w-3xl mb-8">
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">Protokol Kesehatan Nasional</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-2">Panduan Pencegahan Anemia Menurut Kemenkes RI</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Kementerian Kesehatan menyelenggarakan program <b>Aksi Bergizi di Sekolah</b> dengan fokus utama pada pemenuhan nutrisi harian seimbang dan konsumsi Tablet Tambah Darah (TTD) secara rutin.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Kartu 1: Aturan Minum TTD -->
+          <div class="border-2 border-red-200 bg-gradient-to-b from-red-50/50 to-white rounded-3xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-3xl p-2 bg-red-100 rounded-2xl">💊</span>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900">Aturan Konsumsi Tablet Tambah Darah (TTD)</h4>
+                <p class="text-xs text-slate-500">Standar operasional pencegahan anemia remaja putri</p>
+              </div>
+            </div>
+            <ul class="space-y-3 text-xs text-slate-700 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">✔</span>
+                <span><b>Dosis Tepat:</b> Minum 1 tablet seminggu sekali secara konsisten sepanjang tahun.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">✔</span>
+                <span><b>Waktu Minum:</b> Diminum sesudah makan untuk menghindari rasa mual atau perih pada lambung.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 font-bold">✔</span>
+                <span><b>Cairan Pendamping:</b> Minum bersama air putih atau jus jeruk/sumber vitamin C agar zat besi terserap maksimal.</span>
+              </li>
+              <li class="flex items-start gap-2 text-rose-700 bg-rose-50 p-2.5 rounded-xl border border-rose-200">
+                <span class="text-rose-600 font-bold">✖</span>
+                <span><b>PANTANGAN UTAMA:</b> Jangan meminum TTD bersama <b>teh, kopi, atau susu</b> karena mengandung tanin & kalsium yang mengikat zat besi!</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kartu 2: Pola Makan Isi Piringku -->
+          <div class="border-2 border-emerald-200 bg-gradient-to-b from-emerald-50/40 to-white rounded-3xl p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-3xl p-2 bg-emerald-100 rounded-2xl">🥗</span>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900">Pola Makan Seimbang "Isi Piringku"</h4>
+                <p class="text-xs text-slate-500">Pemberian zat besi hewani & nabati berimbang</p>
+              </div>
+            </div>
+            <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
+              <div class="p-3 bg-white rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-800 block text-xs mb-1">🍗 Zat Besi Heme (Tinggi Penyerapan):</span>
+                <span>Ditemukan pada hati ayam, daging merah, telur, dan ikan laut. Sangat mudah diserap oleh saluran pencernaan tubuh.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-800 block text-xs mb-1">🥬 Zat Besi Non-Heme (Nabati):</span>
+                <span>Ditemukan pada bayam, kangkung, daun singkong, tempe, dan tahu. Memerlukan bantuan Vitamin C untuk penyerapan optimal.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200">
+                <span class="font-bold text-slate-800 block text-xs mb-1">💧 Perilaku Hidup Bersih & Sehat (PHBS):</span>
+                <span>Mencuci tangan dengan sabun, menggunakan alas kaki untuk mencegah infeksi cacing tambang yang dapat menguras sel darah merah.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Callout Banner -->
+        <div class="mt-6 bg-slate-900 text-white rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">🏥</span>
+            <div>
+              <h5 class="font-bold text-sm">Kapan Harus Melakukan Skrining Hb ke Puskesmas?</h5>
+              <p class="text-xs text-slate-300">Jika gejala 5L menetap lebih dari 2 minggu meskipun sudah tidur teratur, segera periksakan kadar Hb darah di fasilitas kesehatan terdekat.</p>
+            </div>
+          </div>
+          <a href="https://ayosehat.kemkes.go.id/mengenal-gejala-anemia-pada-remaja" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-red-600 hover:bg-red-500 text-white font-bold text-xs rounded-xl whitespace-nowrap transition-colors">
+            Kunjungi Ayo Sehat ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: KUIS INTERAKTIF ==================== -->
+    <section id="section-kuis" class="hidden space-y-6">
+      <div class="bg-white border border-red-100 rounded-3xl p-6 sm:p-8 shadow-sm max-w-3xl mx-auto">
+        <div class="text-center mb-6">
+          <span class="text-xs font-bold text-red-600 bg-red-50 border border-red-200 px-3 py-1 rounded-full uppercase tracking-wider">Uji Pemahaman</span>
+          <h2 class="text-2xl font-extrabold text-slate-900 mt-2">Kuis & Skrining Sadar Anemia</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">Uji seberapa dalam pengetahuanmu tentang pencegahan anemia pada remaja!</p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer">
+          <!-- Quiz Progress Indicator -->
+          <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-2">
+            <span>Pertanyaan <span id="quizCurrent">1</span> dari <span id="quizTotal">5</span></span>
+            <span>Skor Kuis: <span id="quizScoreText" class="text-red-600">0</span></span>
+          </div>
+          <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden mb-6">
+            <div id="quizProgress" class="h-full bg-red-600 transition-all duration-300" style="width: 20%;"></div>
+          </div>
+
+          <!-- Question Box -->
+          <div class="bg-rose-50/40 border border-rose-100 rounded-2xl p-5 mb-5">
+            <h3 id="quizQuestion" class="font-extrabold text-base text-slate-900 leading-snug">
+              Memuat pertanyaan...
+            </h3>
+          </div>
+
+          <!-- Options Grid -->
+          <div id="quizOptions" class="space-y-3 mb-6">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Feedback explanation card -->
+          <div id="quizFeedback" class="hidden p-4 rounded-2xl text-xs mb-5 transition-all"></div>
+
+          <!-- Next Button -->
+          <div class="flex justify-end">
+            <button id="btnNextQuiz" onclick="nextQuestion()" class="hidden px-6 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs transition-transform active:scale-95">
+              Pertanyaan Berikutnya ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div id="quizResult" class="hidden text-center py-6">
+          <div id="resultBadge" class="text-6xl mb-3">🎖️</div>
+          <h3 id="resultTitle" class="text-2xl font-black text-slate-900 mb-1">Hasil Evaluasimu</h3>
+          <p id="resultDesc" class="text-xs text-slate-600 max-w-md mx-auto mb-6">Penilaian pemahaman literasi pencegahan anemia.</p>
+          
+          <div class="inline-block p-4 bg-red-50 border border-red-200 rounded-2xl mb-6">
+            <span class="text-xs font-semibold text-slate-500 block uppercase">Skor Literasi Kamu:</span>
+            <span id="finalScore" class="text-4xl font-black text-red-600">100 / 100</span>
+          </div>
+
+          <div>
+            <button onclick="restartQuiz()" class="px-6 py-3 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs shadow-md transition-transform active:scale-95">
+              🔄 Ulangi Kuis
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 5: TIM PENGEMBANG ==================== -->
+    <section id="section-tim" class="hidden space-y-6">
+      <div class="bg-white border border-red-100 rounded-3xl p-6 sm:p-8 shadow-sm">
+        <div class="max-w-3xl mb-8">
+          <span class="text-xs font-bold text-rose-700 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full uppercase tracking-wider">Kolaborasi 6 Anggota Kelompok</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-2">Tim Pengembang Proyek "Dari Masalah Menjadi Solusi"</h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Proyek website interaktif dan game edukasi ini dikembangkan bersama secara terstruktur berdasarkan hasil telaah bukti (*evidence*) artikel Kementerian Kesehatan Republik Indonesia.
+          </p>
+        </div>
+
+        <!-- Grid 6 Anggota Tim -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- Anggota 1: Chrestella -->
+          <div class="bg-gradient-to-b from-white to-red-50/40 border border-red-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-red-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                CH
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Chrestella</h4>
+                <span class="text-xs font-bold text-red-700 bg-red-100 px-2 py-0.5 rounded-full inline-block mt-0.5">Project Manager</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Memimpin alur perancangan solusi proyek, membagi beban kerja kelompok, memastikan tenggat waktu (*timeline*) terpenuhi, serta menyelaraskan materi dengan panduan kesehatan Kemenkes.
+            </p>
+          </div>
+
+          <!-- Anggota 2: Aurel -->
+          <div class="bg-gradient-to-b from-white to-rose-50/40 border border-rose-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-rose-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                AU
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Aurel</h4>
+                <span class="text-xs font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full inline-block mt-0.5">Peneliti & Content Writer</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Menggali data gejala klinis 5L, faktor risiko remaja putri dari artikel Ayo Sehat Kemenkes, merumuskan tips pencegahan gizi seimbang, dan menyusun butir soal kuis edukasi.
+            </p>
+          </div>
+
+          <!-- Anggota 3: Diza -->
+          <div class="bg-gradient-to-b from-white to-amber-50/40 border border-amber-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                DZ
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Diza</h4>
+                <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full inline-block mt-0.5">UI/UX Designer</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Merancang wireframe, hierarki visual antarmuka pengguna, tata letak menu tabulasi yang mudah dinavigasi, dan merancang pengalaman pengguna (*UX*) interaktif yang ramah bagi usia remaja.
+            </p>
+          </div>
+
+          <!-- Anggota 4: Yazka -->
+          <div class="bg-gradient-to-b from-white to-blue-50/40 border border-blue-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-blue-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                YZ
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Yazka</h4>
+                <span class="text-xs font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full inline-block mt-0.5">Game Programmer</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mengembangkan logika pemrograman Canvas game HTML5, sistem kalkulasi kadar hemoglobin, deteksi tabrakan benda nutrisi, responsivitas kontrol keyboard/touch, dan efek audio sintesis.
+            </p>
+          </div>
+
+          <!-- Anggota 5: Octa -->
+          <div class="bg-gradient-to-b from-white to-emerald-50/40 border border-emerald-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                OC
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Octa</h4>
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full inline-block mt-0.5">Asset Illustrator</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mendesain ilustrasi sel darah merah (*Erythrocyte*), ikon Tablet Tambah Darah (TTD), sayuran bayam, buah jeruk, palet warna visual game, serta elemen pendukung infografis.
+            </p>
+          </div>
+
+          <!-- Anggota 6: Aldy -->
+          <div class="bg-gradient-to-b from-white to-purple-50/40 border border-purple-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-3.5 mb-3">
+              <div class="w-12 h-12 rounded-2xl bg-purple-600 text-white font-extrabold text-lg flex items-center justify-center shadow-sm">
+                AL
+              </div>
+              <div>
+                <h4 class="font-extrabold text-base text-slate-900 leading-tight">Aldy</h4>
+                <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full inline-block mt-0.5">QA & Presenter</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Melakukan uji coba fungsi lintas browser dan ponsel pintar (*Quality Assurance*), menyusun dokumentasi lembar proyek, serta menyiapkan demonstrasi presentasi pitching di depan kelas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Prototyping Roadmap Info -->
+        <div class="mt-8 p-5 bg-red-50 border border-red-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-xs text-red-900">
+            <span class="font-bold block text-sm">💡 Siklus Pengembangan Solusi:</span>
+            <span>Review Bukti Kemenkes ➔ Identifikasi Penyebab ➔ Desain Interaktif UX (Diza/Octa) ➔ Rekayasa Game Web (Yazka) ➔ Uji Kelayakan & Presentasi (Chrestella/Aldy).</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t border-red-100 py-6 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p class="font-semibold text-slate-700">Hemoglobin Hero © Tim Proyek Siswa: Chrestella, Aurel, Diza, Yazka, Octa, Aldy</p>
+      <p>Materi edukasi bersumber dari artikel resmi <i>Direktorat Promosi Kesehatan dan Pemberdayaan Masyarakat Kemenkes RI</i>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Audio Context Synthesizer (No external sound files required)
+    let audioCtx = null;
+    let audioEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function toggleAudio() {
+      audioEnabled = !audioEnabled;
+      const btn = document.getElementById('btnSoundToggle');
+      btn.textContent = audioEnabled ? '🔊' : '🔇';
+    }
+
+    function playTone(type) {
+      if (!audioEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'catch_good') {
+          // Sweet rising pitch
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.12);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+          osc.start(now);
+          osc.stop(now + 0.13);
+        } else if (type === 'catch_ttd') {
+          // High celebratory double tone
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(659, now);
+          osc.frequency.exponentialRampToValueAtTime(1174, now + 0.2);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.22);
+          osc.start(now);
+          osc.stop(now + 0.22);
+        } else if (type === 'catch_bad') {
+          // Low buzzing obstacle hit
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.18);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
+          osc.start(now);
+          osc.stop(now + 0.19);
+        } else if (type === 'win') {
+          // Victorious fanfare
+          const notes = [523, 659, 783, 1046];
+          notes.forEach((freq, i) => {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.connect(g);
+            g.connect(audioCtx.destination);
+            o.frequency.value = freq;
+            g.gain.setValueAtTime(0.12, now + i * 0.1);
+            g.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.2);
+            o.start(now + i * 0.1);
+            o.stop(now + i * 0.1 + 0.2);
+          });
+        }
+      } catch (e) {
+        console.error("Audio error", e);
+      }
+    }
+
+    function switchTab(tabId) {
+      const tabs = ['game', 'edukasi', 'tips', 'kuis', 'tim'];
+      tabs.forEach(t => {
+        const sec = document.getElementById(`section-${t}`);
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === tabId) {
+          sec.classList.remove('hidden');
+          btn.classList.add('tab-active');
+        } else {
+          sec.classList.add('hidden');
+          btn.classList.remove('tab-active');
+        }
+      });
+
+      // Pause game if leaving game tab
+      if (tabId !== 'game' && isPlaying && !isPaused) {
+        togglePauseGame();
+      }
+    }
+
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    const highScoreDisplay = document.getElementById('highScoreDisplay');
+    const hbDisplay = document.getElementById('hbDisplay');
+    const hbBar = document.getElementById('hbBar');
+    const hbStatusLabel = document.getElementById('hbStatusLabel');
+    const dynamicTip = document.getElementById('dynamicTip');
+
+    const gameModal = document.getElementById('gameModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalIcon = document.getElementById('modalIcon');
+    const btnActionGame = document.getElementById('btnActionGame');
+    const btnPause = document.getElementById('btnPause');
+
+    // High Score Persistence
+    let highScore = localStorage.getItem('hemoglobin_high_score') || 0;
+    highScoreDisplay.textContent = highScore;
+
+    let isPlaying = false;
+    let isPaused = false;
+    let score = 0;
+    let hb = 12.0; // Normal starting Hb (g/dL)
+    let animationFrameId = null;
+    let frameCount = 0;
+
+    // Tips array for educational pop
+    const educationalTips = [
+      "Tablet Tambah Darah (TTD) cukup diminum 1 kali seminggu secara teratur!",
+      "Jangan minum teh/kopi pasca makan agar zat besi tidak terikat!",
+      "Bayam, brokoli, dan hati ayam adalah tambang zat besi alami.",
+      "Kombinasi zat besi dan Vitamin C (jeruk) mempercepat penyerapan hemoglobin.",
+      "Gejala 5L: Lesu, Lelah, Letih, Lemah, Lalai adalah alarm dini anemia.",
+      "Kadar Hb normal untuk remaja putri minimal 12 g/dL."
+    ];
+
+    // Player object: Cute Erythrocyte (Sel Darah Merah)
+    const player = {
+      x: canvas.width / 2 - 32,
+      y: canvas.height - 70,
+      width: 64,
+      height: 48,
+      speed: 8,
+      moveLeft: false,
+      moveRight: false,
+      blinkTimer: 0
+    };
+
+    // Falling Item Catalogue
+    let fallingItems = [];
+    const itemCatalog = [
+      { type: 'ttd', label: '💊', name: 'Tablet Tambah Darah', hbEffect: 2.5, score: 25, color: '#ec4899', isPositive: true },
+      { type: 'iron', label: '🥦', name: 'Zat Besi Alami', hbEffect: 1.0, score: 10, color: '#22c55e', isPositive: true },
+      { type: 'citrus', label: '🍊', name: 'Vitamin C', hbEffect: 1.0, score: 10, color: '#f97316', isPositive: true },
+      { type: 'tea', label: '☕', name: 'Teh/Kopi Pasca Makan', hbEffect: -1.5, score: 0, color: '#9a3412', isPositive: false },
+      { type: 'tired', label: '🥱', name: 'Begadang & 5L', hbEffect: -2.0, score: 0, color: '#64748b', isPositive: false }
+    ];
+
+    // Floating text feedback (+Hb / -Hb)
+    let floatingTexts = [];
+
+    function spawnFallingItem() {
+      const rand = Math.random();
+      let chosen;
+      if (rand < 0.28) {
+        chosen = itemCatalog[0]; // TTD
+      } else if (rand < 0.55) {
+        chosen = itemCatalog[1]; // Sayuran hijau
+      } else if (rand < 0.72) {
+        chosen = itemCatalog[2]; // Jeruk
+      } else if (rand < 0.88) {
+        chosen = itemCatalog[3]; // Teh/kopi
+      } else {
+        chosen = itemCatalog[4]; // 5L
+      }
+
+      fallingItems.push({
+        x: Math.random() * (canvas.width - 50) + 10,
+        y: -40,
+        size: 36,
+        speed: 2.4 + Math.random() * 2.0,
+        ...chosen
+      });
+    }
+
+    function updateGameHUD() {
+      scoreDisplay.textContent = score;
+      if (score > highScore) {
+        highScore = score;
+        highScoreDisplay.textContent = highScore;
+        localStorage.setItem('hemoglobin_high_score', highScore);
+      }
+
+      const hbClamped = Math.max(4.0, Math.min(16.0, hb));
+      hbDisplay.textContent = hbClamped.toFixed(1) + " g/dL";
+
+      // Percentage calculation (4 to 16 g/dL mapping)
+      const pct = ((hbClamped - 4) / 12) * 100;
+      hbBar.style.width = Math.max(5, Math.min(100, pct)) + "%";
+
+      if (hbClamped < 8.0) {
+        hbStatusLabel.textContent = "Anemia Berat!";
+        hbStatusLabel.className = "text-red-700 font-black animate-pulse";
+        hbBar.className = "h-full bg-red-600 rounded-full transition-all duration-300";
+      } else if (hbClamped < 12.0) {
+        hbStatusLabel.textContent = "Waspada (Rendah)";
+        hbStatusLabel.className = "text-amber-600 font-black";
+        hbBar.className = "h-full bg-amber-500 rounded-full transition-all duration-300";
+      } else {
+        hbStatusLabel.textContent = "Normal & Bugar";
+        hbStatusLabel.className = "text-emerald-700 font-black";
+        hbBar.className = "h-full bg-emerald-500 rounded-full transition-all duration-300";
+      }
+    }
+
+    function drawCutePlayer() {
+      ctx.save();
+      const px = player.x;
+      const py = player.y;
+
+      // Outer Red Blood Cell (Biconcave Disk Outline)
+      ctx.fillStyle = '#dc2626';
+      ctx.beginPath();
+      ctx.ellipse(px + 32, py + 24, 30, 22, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#991b1b';
+      ctx.stroke();
+
+      // Inner indentation
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath();
+      ctx.ellipse(px + 32, py + 24, 16, 11, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Cheerful Eyes
+      player.blinkTimer = (player.blinkTimer + 1) % 180;
+      const isBlinking = player.blinkTimer > 170;
+
+      if (!isBlinking) {
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(px + 24, py + 20, 5, 0, Math.PI * 2);
+        ctx.arc(px + 40, py + 20, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#1e293b';
+        ctx.beginPath();
+        ctx.arc(px + 25, py + 20, 2.5, 0, Math.PI * 2);
+        ctx.arc(px + 41, py + 20, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(px + 20, py + 20); ctx.lineTo(px + 27, py + 20);
+        ctx.moveTo(px + 37, py + 20); ctx.lineTo(px + 44, py + 20);
+        ctx.stroke();
+      }
+
+      // Cute Smile
+      ctx.strokeStyle = '#7f1d1d';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(px + 32, py + 25, 6, 0.2 * Math.PI, 0.8 * Math.PI);
+      ctx.stroke();
+
+      // Blush Cheeks
+      ctx.fillStyle = 'rgba(254, 202, 202, 0.7)';
+      ctx.beginPath();
+      ctx.ellipse(px + 18, py + 25, 4, 2.5, 0, 0, Math.PI * 2);
+      ctx.ellipse(px + 46, py + 25, 4, 2.5, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.restore();
+    }
+
+    function gameLoop() {
+      if (!isPlaying || isPaused) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      frameCount++;
+
+      // Player Movement
+      if (player.moveLeft && player.x > 8) {
+        player.x -= player.speed;
+      }
+      if (player.moveRight && player.x < canvas.width - player.width - 8) {
+        player.x += player.speed;
+      }
+
+      drawCutePlayer();
+
+      // Item Spawning
+      if (frameCount % 45 === 0) {
+        spawnFallingItem();
+      }
+
+      // Update and Draw Falling Items
+      for (let i = fallingItems.length - 1; i >= 0; i--) {
+        const item = fallingItems[i];
+        item.y += item.speed;
+
+        // Render Item Emoji Icon
+        ctx.font = '26px "Segoe UI Emoji", Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(item.label, item.x + item.size / 2, item.y + item.size / 1.5);
+
+        // AABB Collision Detection
+        if (
+          item.x < player.x + player.width &&
+          item.x + item.size > player.x &&
+          item.y < player.y + player.height &&
+          item.y + item.size > player.y
+        ) {
+          // Process Item Catch
+          hb += item.hbEffect;
+          score += item.score;
+          updateGameHUD();
+
+          // Sound effect
+          if (item.type === 'ttd') {
+            playTone('catch_ttd');
+          } else if (item.isPositive) {
+            playTone('catch_good');
+          } else {
+            playTone('catch_bad');
+          }
+
+          // Add Floating Text
+          floatingTexts.push({
+            x: item.x,
+            y: item.y,
+            text: (item.hbEffect > 0 ? '+' : '') + item.hbEffect.toFixed(1) + ' Hb',
+            color: item.isPositive ? '#16a34a' : '#dc2626',
+            life: 30
+          });
+
+          // Show random education tip
+          dynamicTip.textContent = educationalTips[Math.floor(Math.random() * educationalTips.length)];
+
+          fallingItems.splice(i, 1);
+          continue;
+        }
+
+        // Remove Off-screen
+        if (item.y > canvas.height + 20) {
+          fallingItems.splice(i, 1);
+        }
+      }
+
+      // Render Floating Text Feedbacks
+      for (let j = floatingTexts.length - 1; j >= 0; j--) {
+        const ft = floatingTexts[j];
+        ctx.font = 'bold 15px "Plus Jakarta Sans", sans-serif';
+        ctx.fillStyle = ft.color;
+        ctx.textAlign = 'center';
+        ctx.fillText(ft.text, ft.x + 16, ft.y);
+        ft.y -= 1.2;
+        ft.life--;
+        if (ft.life <= 0) {
+          floatingTexts.splice(j, 1);
+        }
+      }
+
+      // Check Win / Loss Conditions
+      if (hb <= 6.5) {
+        finishGame(false, "Kadar hemoglobin drop drastis di bawah ambang normal (&lt;7.0 g/dL)! Gejala pusing dan lelah parah melumpuhkan aktivitasmu.");
+      } else if (score >= 200 && hb >= 12.0) {
+        finishGame(true, "Selamat! Kamu berhasil menjaga status gizi dan Hb optimal (&ge;12.0 g/dL). Tubuhmu bugar, konsentrasi belajar tetap tajam!");
+      } else {
+        animationFrameId = requestAnimationFrame(gameLoop);
+      }
+    }
+
+    function startGame() {
+      initAudio();
+      gameModal.classList.add('hidden');
+      score = 0;
+      hb = 12.0;
+      fallingItems = [];
+      floatingTexts = [];
+      player.x = canvas.width / 2 - 32;
+      isPlaying = true;
+      isPaused = false;
+      btnPause.textContent = "⏸️ Pause";
+      updateGameHUD();
+      dynamicTip.textContent = "Kumpulkan Tablet Tambah Darah (TTD) dan buah-buahan!";
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(gameLoop);
+    }
+
+    function togglePauseGame() {
+      if (!isPlaying) return;
+      isPaused = !isPaused;
+      if (isPaused) {
+        btnPause.textContent = "▶️ Lanjut";
+        modalIcon.textContent = "⏸️";
+        modalTitle.textContent = "Permainan Dijeda";
+        modalDesc.textContent = "Istirahat sejenak sambil mengingat panduan gizi seimbang Kemenkes!";
+        btnActionGame.textContent = "Lanjutkan Main";
+        gameModal.classList.remove('hidden');
+      } else {
+        btnPause.textContent = "⏸️ Pause";
+        gameModal.classList.add('hidden');
+        animationFrameId = requestAnimationFrame(gameLoop);
+      }
+    }
+
+    function finishGame(isWin, message) {
+      isPlaying = false;
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+      if (isWin) {
+        playTone('win');
+        modalIcon.textContent = "🎉";
+        modalTitle.textContent = "Misi Berhasil: Remaja Bugar!";
+        modalTitle.className = "text-2xl sm:text-3xl font-black mb-2 text-emerald-300";
+      } else {
+        playTone('catch_bad');
+        modalIcon.textContent = "⚠️";
+        modalTitle.textContent = "Gejala Anemia Muncul!";
+        modalTitle.className = "text-2xl sm:text-3xl font-black mb-2 text-rose-300";
+      }
+
+      modalDesc.innerHTML = `${message}<br><br><span class="font-bold text-white text-base">Skor Akhir: ${score} | Kadar Hb: ${hb.toFixed(1)} g/dL</span>`;
+      btnActionGame.textContent = "Main Lagi";
+      gameModal.classList.remove('hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+        player.moveLeft = true;
+      }
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+        player.moveRight = true;
+      }
+      if (e.key === ' ' && isPlaying) {
+        togglePauseGame();
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
+        player.moveLeft = false;
+      }
+      if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
+        player.moveRight = false;
+      }
+    });
+
+    // Touch Buttons
+    const btnTouchLeft = document.getElementById('btnTouchLeft');
+    const btnTouchRight = document.getElementById('btnTouchRight');
+
+    const handleLeftStart = (e) => { e.preventDefault(); player.moveLeft = true; };
+    const handleLeftEnd = (e) => { e.preventDefault(); player.moveLeft = false; };
+    const handleRightStart = (e) => { e.preventDefault(); player.moveRight = true; };
+    const handleRightEnd = (e) => { e.preventDefault(); player.moveRight = false; };
+
+    btnTouchLeft.addEventListener('mousedown', handleLeftStart);
+    btnTouchLeft.addEventListener('mouseup', handleLeftEnd);
+    btnTouchLeft.addEventListener('touchstart', handleLeftStart, { passive: false });
+    btnTouchLeft.addEventListener('touchend', handleLeftEnd, { passive: false });
+
+    btnTouchRight.addEventListener('mousedown', handleRightStart);
+    btnTouchRight.addEventListener('mouseup', handleRightEnd);
+    btnTouchRight.addEventListener('touchstart', handleRightStart, { passive: false });
+    btnTouchRight.addEventListener('touchend', handleRightEnd, { passive: false });
+
+    // Touch Slide Directly on Canvas
+    canvas.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      const touchX = e.touches[0].clientX - rect.left;
+      const scaleX = canvas.width / rect.width;
+      player.x = Math.max(10, Math.min(canvas.width - player.width - 10, touchX * scaleX - player.width / 2));
+    }, { passive: false });
+
+    // Initial canvas render preview
+    drawCutePlayer();
+
+    // ==================== STREAMING_CHUNK:Implementing Interactive Quiz System ====================
+    const quizQuestions = [
+      {
+        question: "Mengapa remaja putri memiliki risiko anemia yang jauh lebih tinggi dibandingkan remaja putra?",
+        options: [
+          "Karena remaja putri tidak boleh berolahraga di siang hari",
+          "Karena mengalami menstruasi bulanan dan percepatan pertumbuhan fisik",
+          "Karena hanya memakan sayuran dan buah-buahan",
+          "Karena metabolisme tubuh remaja putri lebih lambat"
+        ],
+        correct: 1,
+        explanation: "Remaja putri mengalami kehilangan darah secara rutin lewat siklus menstruasi serta kebutuhan zat besi tinggi selama fase pertumbuhan pesat (growth spurt)."
+      },
+      {
+        question: "Berapa anjuran konsumsi Tablet Tambah Darah (TTD) untuk pencegahan anemia bagi remaja putri?",
+        options: [
+          "1 tablet setiap hari seumur hidup",
+          "1 tablet per bulan saat awal menstruasi saja",
+          "1 tablet per minggu secara konsisten sepanjang tahun",
+          "3 tablet sekaligus saat merasa pusing"
+        ],
+        correct: 2,
+        explanation: "Sesuai anjuran Kemenkes RI, remaja putri dianjurkan meminum 1 Tablet Tambah Darah setiap minggu untuk menjaga cadangan hemoglobin."
+      },
+      {
+        question: "Minuman apa yang TIDAK BOLEH dikonsumsi bersamaan dengan Tablet Tambah Darah (TTD)?",
+        options: [
+          "Air putih segar",
+          "Jus jeruk kaya Vitamin C",
+          "Teh manis, kopi, atau susu",
+          "Air kelapa murni"
+        ],
+        correct: 2,
+        explanation: "Teh dan kopi mengandung senyawa tanin, sedangkan susu mengandung kalsium tinggi yang keduanya dapat mengikat dan menghambat penyerapan zat besi dalam usus."
+      },
+      {
+        question: "Manakah yang merupakan singkatan dari sindrom '5L' sebagai gejala awal anemia?",
+        options: [
+          "Lesu, Lelah, Letih, Lemah, Lalai",
+          "Lapar, Lelah, Lambat, Linu, Lembut",
+          "Lupa, Lemah, Longgar, Lesu, Lari",
+          "Latah, Letih, Lambat, Lemas, Loyo"
+        ],
+        correct: 0,
+        explanation: "5L adalah Lesu, Lelah, Letih, Lemah, dan Lalai—tanda khas tubuh kekurangan pasokan oksigen akibat hemoglobin rendah."
+      },
+      {
+        question: "Berapa kadar normal Hemoglobin (Hb) dalam darah bagi remaja putri menurut standar Kemenkes?",
+        options: [
+          "Minimal 8.0 g/dL",
+          "Minimal 10.0 g/dL",
+          "Minimal 12.0 g/dL",
+          "Minimal 18.0 g/dL"
+        ],
+        correct: 2,
+        explanation: "Batas normal kadar Hemoglobin (Hb) untuk remaja putri adalah minimal 12.0 g/dL, sedangkan untuk remaja putra minimal 13.0 g/dL."
+      }
+    ];
+
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let answered = false;
+
+    function renderQuestion() {
+      answered = false;
+      const q = quizQuestions[currentQuizIndex];
+      document.getElementById('quizCurrent').textContent = currentQuizIndex + 1;
+      document.getElementById('quizTotal').textContent = quizQuestions.length;
+      document.getElementById('quizProgress').style.width = `${((currentQuizIndex + 1) / quizQuestions.length) * 100}%`;
+      document.getElementById('quizQuestion').textContent = q.question;
+
+      const feedback = document.getElementById('quizFeedback');
+      feedback.classList.add('hidden');
+      feedback.className = "hidden p-4 rounded-2xl text-xs mb-5 transition-all";
+
+      document.getElementById('btnNextQuiz').classList.add('hidden');
+
+      const optionsContainer = document.getElementById('quizOptions');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full text-left p-3.5 rounded-2xl border-2 border-slate-200 bg-white hover:border-red-300 hover:bg-red-50/30 transition-all font-medium text-xs sm:text-sm text-slate-800 flex items-center justify-between";
+        btn.innerHTML = `<span>${opt}</span><span class="text-slate-300 font-bold ml-2">○</span>`;
+        btn.onclick = () => selectQuizAnswer(idx, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function selectQuizAnswer(selectedIdx, btnElement) {
+      if (answered) return;
+      answered = true;
+      initAudio();
+
+      const q = quizQuestions[currentQuizIndex];
+      const buttons = document.getElementById('quizOptions').children;
+      const feedback = document.getElementById('quizFeedback');
+
+      // Highlight correct & wrong
+      if (selectedIdx === q.correct) {
+        playTone('catch_good');
+        quizScore += 20;
+        document.getElementById('quizScoreText').textContent = quizScore;
+        btnElement.className = "w-full text-left p-3.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs sm:text-sm flex items-center justify-between";
+        btnElement.innerHTML = `<span>${q.options[selectedIdx]}</span><span class="text-emerald-600 font-bold">✔ Benar</span>`;
+        
+        feedback.className = "p-4 rounded-2xl text-xs mb-5 bg-emerald-100 border border-emerald-300 text-emerald-950 block";
+        feedback.innerHTML = `<b>Tepat sekali!</b> ${q.explanation}`;
+      } else {
+        playTone('catch_bad');
+        btnElement.className = "w-full text-left p-3.5 rounded-2xl border-2 border-rose-500 bg-rose-50 text-rose-950 font-bold text-xs sm:text-sm flex items-center justify-between";
+        btnElement.innerHTML = `<span>${q.options[selectedIdx]}</span><span class="text-rose-600 font-bold">✖ Salah</span>`;
+        
+        // Mark correct answer
+        buttons[q.correct].className = "w-full text-left p-3.5 rounded-2xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs sm:text-sm flex items-center justify-between";
+        buttons[q.correct].innerHTML = `<span>${q.options[q.correct]}</span><span class="text-emerald-600 font-bold">✔ Kunci Jawaban</span>`;
+
+        feedback.className = "p-4 rounded-2xl text-xs mb-5 bg-rose-100 border border-rose-300 text-rose-950 block";
+        feedback.innerHTML = `<b>Kurang tepat.</b> ${q.explanation}`;
+      }
+
+      document.getElementById('btnNextQuiz').classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      currentQuizIndex++;
+      if (currentQuizIndex < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      document.getElementById('quizContainer').classList.add('hidden');
+      const resultView = document.getElementById('quizResult');
+      resultView.classList.remove('hidden');
+
+      document.getElementById('finalScore').textContent = `${quizScore} / 100`;
+
+      const badge = document.getElementById('resultBadge');
+      const title = document.getElementById('resultTitle');
+      const desc = document.getElementById('resultDesc');
+
+      if (quizScore >= 80) {
+        playTone('win');
+        badge.textContent = "🏆";
+        title.textContent = "Duta Remaja Bugar Sadar Anemia!";
+        desc.textContent = "Luar biasa! Kamu memahami secara mendalam gejala, faktor risiko, dan cara pencegahan anemia sesuai panduan Kemenkes RI.";
+      } else if (quizScore >= 60) {
+        badge.textContent = "🥈";
+        title.textContent = "Cukup Memahami Literasi Anemia";
+        desc.textContent = "Bagus! Kamu sudah mengetahui dasar-dasarnya. Pelajari kembali materi tips TTD Kemenkes untuk hasil sempurna.";
+      } else {
+        badge.textContent = "📚";
+        title.textContent = "Perlu Membaca Panduan Kembali";
+        desc.textContent = "Yuk buka menu 'Mengenal Anemia' dan 'Tips Kemenkes' agar lebih siap menjaga kesehatan diri dan teman-temanmu.";
+      }
+    }
+
+    function restartQuiz() {
+      currentQuizIndex = 0;
+      quizScore = 0;
+      document.getElementById('quizScoreText').textContent = '0';
+      document.getElementById('quizResult').classList.add('hidden');
+      document.getElementById('quizContainer').classList.remove('hidden');
+      renderQuestion();
+    }
+
+    // Initialize Quiz first time
+    renderQuestion();
+  </script>
+</body>
+</html>
